@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calculator"
+             x:Class="Calculator.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CalculatorKeys" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="FontSize" Value="36"/>
+            </Style>
+
+            <Style x:Key="CalculatorOrangeKeys" TargetType="Button" BasedOn="{StaticResource CalculatorKeys}">
+                <Setter Property="BackgroundColor" Value="#FFA400"/>
+                <Setter Property="TextColor" Value="White"/>
+                
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+    <Grid BackgroundColor="Black" RowSpacing="1" ColumnSpacing="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Entry Text="0" x:Name="Value" FontSize="48" TextColor="White" HorizontalTextAlignment="End" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" BackgroundColor="Black"/>
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="7" Grid.Row="1" Grid.Column="0" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="8" Grid.Row="1" Grid.Column="1" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="9" Grid.Row="1" Grid.Column="2" />
+        <Button Style="{StaticResource CalculatorOrangeKeys}" Clicked="OnCalculatorActionClicked" Text="/" Grid.Row="1" Grid.Column="3" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="4" Grid.Row="2" Grid.Column="0" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="5" Grid.Row="2" Grid.Column="1" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="6" Grid.Row="2" Grid.Column="2" />
+        <Button Style="{StaticResource CalculatorOrangeKeys}" Clicked="OnCalculatorActionClicked" Text="X" Grid.Row="2" Grid.Column="3" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="1" Grid.Row="3" Grid.Column="0" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="2" Grid.Row="3" Grid.Column="1" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="3" Grid.Row="3" Grid.Column="2" />
+        <Button Style="{StaticResource CalculatorOrangeKeys}" Clicked="OnCalculatorActionClicked" Text="-" Grid.Row="3" Grid.Column="3" />
+        <Button Style="{StaticResource CalculatorKeys}" Clicked="OnCalculatorKeyClicked" Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" />
+        <Button Style="{StaticResource CalculatorOrangeKeys}" Clicked="OnCalculatorActionClicked" Text="+" Grid.Row="4" Grid.Column="3" />
+        <Button BackgroundColor="#808080" FontSize="36" Clicked="OnClear" TextColor="White" Text="C" Grid.Row="5" Grid.Column="0" />
+        <Button Style="{StaticResource CalculatorOrangeKeys}" Clicked="OnEqualsClicked" Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" />
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>
